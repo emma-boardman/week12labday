@@ -19,5 +19,8 @@
   "homepage": "https://github.com/emmaboardman1986/week12labday#readme",
   "dependencies": {
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.2"
   }
 }
