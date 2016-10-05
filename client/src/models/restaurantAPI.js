@@ -3,23 +3,23 @@ var RestaurantApi = function(app){
   { name: "Khushi's",
     cuisine: "Indian",
     stars: 5
-    },
+  },
 
-    { name: "McDonalds",
-      cuisine: "Fast Food",
-      stars: 2
-      }
+  { name: "McDonalds",
+    cuisine: "Fast Food",
+    stars: 2
+  }
   ];
 
-app.get('/restaurants/:id', function(req, res){
-  res.json({data:restaurants[req.params.id]});
-});
+  console.log(restaurants);
 
+  app.get('/restaurants/:id', function(req, res){
+    res.json({data:restaurants[req.params.id]});
+  });
 
-app.get('/restaurants', function(req, res) {
-  res.json({data:restaurants});
-});
-
+  app.get('/restaurants', function(req, res) {
+   res.json({data:restaurants});
+  });
 }
 
 module.exports = RestaurantApi;
