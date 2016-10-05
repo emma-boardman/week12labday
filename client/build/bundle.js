@@ -87,7 +87,8 @@
 	    var container = document.getElementById("restaurants");
 	    for(var restaurant of restaurants) {
 	
-	      console.log(restaurant)
+	      console.log(restaurants)
+	
 	      var li = document.createElement("li");
 	      this.createRestaurant(li, restaurant);
 	      container.appendChild(li);
@@ -107,14 +108,22 @@
 	var Restaurant = __webpack_require__(3);
 	
 	var Restaurants = function() {
+	
 	  var restaurant1 = new Restaurant({
 	    name: "Khushi's",
 	    cuisine: "Indian",
 	    stars: 5
 	  });
-	  return [restaurant1]
-	}
 	
+	  var restaurant2 = new Restaurant({
+	    name: "McDonalds",
+	    cuisine: "Fast Food",
+	    stars: 2
+	  });
+	
+	
+	  return [restaurant1, restaurant2]
+	}
 	
 	
 	

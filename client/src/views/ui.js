@@ -29,7 +29,8 @@ UI.prototype = {
     var container = document.getElementById("restaurants");
     for(var restaurant of restaurants) {
 
-      console.log(restaurant)
+      console.log(restaurants)
+
       var li = document.createElement("li");
       this.createRestaurant(li, restaurant);
       container.appendChild(li);
