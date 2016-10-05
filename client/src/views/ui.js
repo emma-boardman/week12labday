@@ -6,31 +6,38 @@ var UI = function(){
 }
 
 UI.prototype = {
-  createText: function(text){
+
+  createText: function(text, label){
     var p = document.createElement("p");
-    p.innerText = text;
+    p.innerText = label+text;
     return p;
   },
-  
+
   appendText: function(element, text, label){
     var pTag = this.createText(text, label);
     element.appendChild(pTag);
   },
+
+  createRestaurant: function(li, restaurant) {
+    this.appendText(li, restaurant.name, "Name: ");
+    this.appendText(li, restaurant.cuisine, "Cuisine: ");
+    this.appendText(li, restaurant.stars, "Stars: ");
+
+  },
   
   render: function(restaurants) {
-    var container = document.getElementById("li");
-
+    var container = document.getElementById("restaurants");
     for(var restaurant of restaurants) {
 
+      console.log(restaurant)
       var li = document.createElement("li");
-      this.appendText(li, restaurant.name, "Name: ");
-      this.appendText(li, restaurant.cuisine, "Cuisine: ");
-      this.appendText(li, restaurant.stars, "Stars: ");
+      this.createRestaurant(li, restaurant);
       container.appendChild(li);
     }
     
   }
 
 }
+
 
 module.exports = UI;

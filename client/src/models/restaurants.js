@@ -6,7 +6,10 @@ var Restaurants = function() {
     cuisine: "Indian",
     stars: 5
   });
-  console.log(restaurant1);
+  return [restaurant1]
 }
+
+
+
 
 module.exports = Restaurants;
