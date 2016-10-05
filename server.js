@@ -4,7 +4,11 @@ var app = express();
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended: true}));
 
-var RestaurantApi = require('./client/src/models/restaurantApi');
+// var RestaurantApi = require('./client/src/models/restaurantApi');
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
 
 app.listen(3000, function () {
   new RestaurantApi(app);
