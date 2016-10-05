@@ -6,4 +6,5 @@ var Restaurants = function() {
     cuisine: "Indian",
     stars: 5
   });
+  console.log(restaurant1);
 }
