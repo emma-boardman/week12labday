@@ -4,10 +4,9 @@ var app = express();
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/', function (req, res) {
-  res.json({ text: 'Sup!'});
-});
+var RestaurantApi = require('./client/src/models/restaurantApi');
 
 app.listen(3000, function () {
+  new RestaurantApi(app);
   console.log('App running on port '+this.address().port);
 });
