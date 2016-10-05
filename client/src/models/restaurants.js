@@ -8,3 +8,5 @@ var Restaurants = function() {
   });
   console.log(restaurant1);
 }
+
+module.exports = Restaurants;

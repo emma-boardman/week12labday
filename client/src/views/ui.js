@@ -32,3 +32,5 @@ UI.prototype = {
   }
 
 }
+
+module.exports = UI;

@@ -42,9 +42,85 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var UI = __webpack_require__(1);
+	
+	var app = function() {
+	  new UI();
+	}
+	
+	window.onload = app;
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Restaurants = __webpack_require__(2);
+	
+	var UI = function(){
+	  var restaurants = new Restaurants();
+	  this.render(restaurants);
+	}
+	
+	UI.prototype = {
+	  createText: function(text){
+	    var p = document.createElement("p");
+	    p.innerText = text;
+	    return p;
+	  },
+	  
+	  appendText: function(element, text, label){
+	    var pTag = this.createText(text, label);
+	    element.appendChild(pTag);
+	  },
+	  
+	  render: function(restaurants) {
+	    var container = document.getElementById("li");
+	
+	    for(var restaurant of restaurants) {
+	
+	      var li = document.createElement("li");
+	      this.appendText(li, restaurant.name, "Name: ");
+	      this.appendText(li, restaurant.cuisine, "Cuisine: ");
+	      this.appendText(li, restaurant.stars, "Stars: ");
+	      container.appendChild(li);
+	    }
+	    
+	  }
+	
+	}
+	
+	module.exports = UI;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Restaurant = __webpack_require__(3);
+	
+	var Restaurants = function() {
+	  var restaurant1 = new Restaurant({
+	    name: "Khushi's",
+	    cuisine: "Indian",
+	    stars: 5
+	  });
+	  console.log(restaurant1);
+	}
+	
+	module.exports = Restaurants;
+
+/***/ },
+/* 3 */
 /***/ function(module, exports) {
 
-
+	var Restaurant = function(options) {
+	  this.name = options.name;
+	  this.cuisine = options.cuisine;
+	  this.stars = options.stars;
+	}
+	
+	module.exports = Restaurant;
 
 /***/ }
 /******/ ]);
